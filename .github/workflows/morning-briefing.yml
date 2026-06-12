@@ -229,6 +229,10 @@ Add a failure-notification step:
 
 * Run it locally first (per the cron setup guide).
 * Then push to a feature branch with `workflow\_dispatch` only (no schedule) to test on GitHub.
+<<<<<<< Updated upstream
 * Then merge to main with the schedule enabled.
 
 
+=======
+* Then merge to main with the schedule enabled.
+>>>>>>> Stashed changes
