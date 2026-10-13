@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersec Briefing — 2026-10-13</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c0e;
+      --bg-card: #15151a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a8a8b0;
+      --accent-cyan: #5adcf0;
+      --accent-yellow: #ffd54f;
+      --accent-green: #82e682;
+      --accent-red: #ff7a7a;
+      --border: #2a2a32;
+    }
+    [data-theme="light"] {
+      --bg-dark: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --accent-cyan: #0091ad;
+      --accent-yellow: #b8860b;
+      --accent-green: #228822;
+      --accent-red: #c0392b;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .toggle {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .toggle:hover { border-color: var(--accent-cyan); }
+    section {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    section.threats { border-left-color: var(--accent-red); }
+    section.news { border-left-color: var(--accent-cyan); }
+    section.advice { border-left-color: var(--accent-green); }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.threats h2 { color: var(--accent-red); }
+    section.news h2 { color: var(--accent-cyan); }
+    section.advice h2 { color: var(--accent-green); }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    li:last-child { border-bottom: none; }
+    li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    li a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    li a:hover { text-decoration: underline; }
+    li p { color: var(--text-secondary); font-size: 0.95rem; }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .no-items {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Cybersec Briefing — 2026-10-13</h1>
+        <div class="meta">Window: last 24 hours &middot; 10 sources polled &middot; 11 items kept</div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()">Light / Dark</button>
+    </header>
+
+    <section class="threats">
+      <h2>Threats</h2>
+      <ul><li><strong>SAP warns of maximum severity OAuth2 SSRF security flaw</strong><p>SAP has addressed 20 security flaws across multiple products in its October 2026 security updates, including a maximum-severity vulnerability in the Cloud SDK for Python. [...] <a href="https://www.bleepingcomputer.com/news/security/sap-warns-of-maximum-severity-oauth2-ssrf-security-flaw/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Xandr Fined a Record €8.6 Million for Relaying Grindr Data Revealing Sexual Orientation</strong><p>The Norwegian Data Protection Authority (DPA) has fined Xandr, an advertising unit owned by Microsoft, €8.6 million ($9.62 million) for illegally relaying ​Grindr users' sensitive data to advertisers. <a href="https://thehackernews.com/2026/10/xandr-fined-record-86-million-for.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>LG Smart TVs Vulnerable to Pre-Auth Root Takeover From Local Network</strong><p>Three vulnerabilities in LG's webOS can be chained to give an attacker on the same local network root access to certain smart TVs without a PIN or any interaction from the owner. LG has issued a fix, according to an advisory published by SSD Secure Disclosure on October 12. <a href="https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Anthropic takes risky AI tests offline after models breach govt sites</strong><p>Anthropic announced that its internal AI models undergoing &quot;high-risk and cybersecurity evaluations&quot; no longer have internet access following incidents involving U.S. government websites at the federal, state, and local levels. [...] <a href="https://www.bleepingcomputer.com/news/security/anthropic-takes-risky-ai-tests-offline-after-models-breach-govt-sites/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>⚡ Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More</strong><p>Some meetings last longer than it took attackers to jump on a newly disclosed security flaw this week. Within hours, they were already testing it. That's not much time to read the warning, let alone do something about it. But speed is only part of the problem. <a href="https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="news">
+      <h2>News</h2>
+      <ul><li><strong>The MFA Gaps Attackers are Still Exploiting</strong><p>Attackers continue exploiting gaps in MFA coverage, using stolen credentials to access VPNs, RDP, and Windows systems that still rely on passwords alone. Specops explains why protecting cloud applications isn't enough and how organizations can close these authentication gaps. <a href="https://www.bleepingcomputer.com/news/security/the-mfa-gaps-attackers-are-still-exploiting/" rel="noopener noreferrer" target="_blank">.. [Source: Bleeping Computer</a></p></li><li><strong>Attackers Heat French Supermarket Fridges Up to 50°C by Hijacking Danfoss Controllers</strong><p>Attackers took remote control of fridges and freezers at hundreds of French supermarkets on the night of October 11 and warmed them, forcing stores to throw food away, several retail chains said. <a href="https://thehackernews.com/2026/10/attackers-heat-french-supermarket.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Two Critical MarkLogic Flaws Could Give Delegated Managers Persistent Admin Control</strong><p>Two of 31 newly disclosed flaws in Progress Software's MarkLogic Server database could let an account given only some management privileges take administrator control of the server, the company says. Progress published all 31 on October 12 and scored five of them . <a href="https://thehackernews.com/2026/10/two-critical-marklogic-flaws-could-give.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>GitLab Patches CVSS 10.0 Flaw That Could Let Unauthenticated Users Run Server Code</strong><p>GitLab has released patches for a maximum-severity security flaw impacting its Community Edition (CE) and Enterprise Edition (EE) software that could result in arbitrary code execution. <a href="https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Low-Cost Android Phones Ship With Preinstalled Malware That Turns Them Into Residential Proxies</strong><p>Low-cost Android smartphones have been shipped with malicious software baked into the device firmware, allowing bad actors to covertly install apps, conduct ad fraud, and turn devices into residential proxies. <a href="https://thehackernews.com/2026/10/low-cost-android-phones-ship-with.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="advice">
+      <h2>Advice</h2>
+      <ul><li><strong>Product Walkthrough: Bitdefender AI Visibility and Control</strong><p>A user opens a browser tab, pastes data into a chat assistant, and nothing is installed. A developer adds a coding assistant as an editor extension, and nothing shows up in the installed programs list. <a href="https://thehackernews.com/2026/10/product-walkthrough-bitdefender-ai.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <footer>
+      Generated 2026-10-13T15:09:29 UTC
+      <br><em>Sources that failed this run: US-CERT CISA Alerts</em>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("cybersec-briefing-theme", next);
+    }
+    (function() {
+      const saved = localStorage.getItem("cybersec-briefing-theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</body>
+</html>
