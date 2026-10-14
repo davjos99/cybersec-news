@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersec Briefing — 2026-10-14</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c0e;
+      --bg-card: #15151a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a8a8b0;
+      --accent-cyan: #5adcf0;
+      --accent-yellow: #ffd54f;
+      --accent-green: #82e682;
+      --accent-red: #ff7a7a;
+      --border: #2a2a32;
+    }
+    [data-theme="light"] {
+      --bg-dark: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --accent-cyan: #0091ad;
+      --accent-yellow: #b8860b;
+      --accent-green: #228822;
+      --accent-red: #c0392b;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .toggle {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .toggle:hover { border-color: var(--accent-cyan); }
+    section {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    section.threats { border-left-color: var(--accent-red); }
+    section.news { border-left-color: var(--accent-cyan); }
+    section.advice { border-left-color: var(--accent-green); }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.threats h2 { color: var(--accent-red); }
+    section.news h2 { color: var(--accent-cyan); }
+    section.advice h2 { color: var(--accent-green); }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    li:last-child { border-bottom: none; }
+    li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    li a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    li a:hover { text-decoration: underline; }
+    li p { color: var(--text-secondary); font-size: 0.95rem; }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .no-items {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Cybersec Briefing — 2026-10-14</h1>
+        <div class="meta">Window: last 24 hours &middot; 10 sources polled &middot; 13 items kept</div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()">Light / Dark</button>
+    </header>
+
+    <section class="threats">
+      <h2>Threats</h2>
+      <ul><li><strong>Microsoft Patches More Than 1,400 Security Flaws</strong><p>Microsoft today issued updates to fix more than 1,400 security vulnerabilities in its Windows operating systems and other software. <a href="https://krebsonsecurity.com/2026/10/microsoft-patches-more-than-1400-security-flaws/" rel="noopener noreferrer" target="_blank">Source: KrebsOnSecurity</a></p></li><li><strong>October 2026 Microsoft Patch Tuesday, (Tue, Oct 13th)</strong><p>Microsoft today released patches for 1,417 vulnerabilities. 76 of these vulnerabilities are rated , with 7 vulnerabiilties requiring no customer actions. One vulnerability was disclosed before today's patch Tuesday, and one is already exploited. <a href="https://isc.sans.edu/diary/rss/33422" rel="noopener noreferrer" target="_blank">Source: SANS Internet Storm Center</a></p></li><li><strong>CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts</strong><p>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday urged organizations to take steps to immediately update their Ivanti Connect Secure (ICS) appliances and deployments to the latest version following the disclosure of an actively exploited vulnerability. <a href="https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host</strong><p>A flaw in Linux's vhost subsystem lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions. <a href="https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Microsoft Patches Record 1,413 Flaws, Including Exploited Windows Shell Bug</strong><p>Microsoft on Tuesday shattered its own Patch Tuesday record by shipping patches for a whopping 1,413 vulnerabilities, including one that it said has come under active exploitation. <a href="https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="news">
+      <h2>News</h2>
+      <ul><li><strong>Friday Squid Blogging: I Caught a Squid</strong><p>On Wednesday I spent a day fishing, on a small boat out of Gloucester, MA. We caught many cod (none of which we could keep), and a bunch of hake and mackerel (all of which we could keep). <a href="https://www.schneier.com/blog/archives/2026/10/friday-squid-blogging-i-caught-a-squid.html" rel="noopener noreferrer" target="_blank">Source: Schneier on Security</a></p></li><li><strong>Orphaned VBA Projects Inside DWG Files, (Wed, Oct 14th)</strong><p>Years ago I wrote diary entries about VBA code stored inside AutoCAD drawing files (.dwg). <a href="https://isc.sans.edu/diary/rss/33420" rel="noopener noreferrer" target="_blank">Source: SANS Internet Storm Center</a></p></li><li><strong>curl Patches HTTP/2 Upload Flaw After PoC Demonstrates Client-Side Code Execution</strong><p>A flaw in how curl handles HTTP/2 uploads lets a malicious server receiving an upload corrupt the client's memory, and the researcher who reported it turned that into code execution on the uploading machine. The curl project fixed it on October 14 in curl 8.23.0. <a href="https://thehackernews.com/2026/10/curl-patches-http2-upload-flaw-after.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Hirudo Android malware replaces banking apps to evade security checks</strong><p>A new Android malware called Hirudo steals bank account credentials by replacing legitimate banking apps with modified versions that disable security checks. [...] <a href="https://www.bleepingcomputer.com/news/security/hirudo-android-malware-replaces-banking-apps-to-evade-security-checks/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Researchers Used a Public OpenAI Model to Build a $250,000 Chrome Full-Chain Exploit in Six Days</strong><p>A team at security firm XBOW chained three then-unknown Google Chrome bugs into a single attack that runs code on a Windows computer when the user only loads a web page, the company said. <a href="https://thehackernews.com/2026/10/researchers-used-public-openai-model-to.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="advice">
+      <h2>Advice</h2>
+      <ul><li><strong>How to Run a Deepfake Readiness Drill Before a Cloned Voice Calls Your Team</strong><p>Cloned voices and synthetic video calls now show up in payment fraud, help desk resets, and access requests. A structured drill shows security teams exactly where verification breaks down, while nothing is at stake. The call comes in at 4:40 on a Friday. <a href="https://thehackernews.com/2026/10/how-to-run-deepfake-readiness-drill.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>GitHub Tightens npm Publishing After Flaw Left 1,500+ Packages Vulnerable to Hijacking</strong><p>GitHub has taken the step of expiring unvalidated npm trusted publishing configurations 48 hours after creation after researchers found that it was possible for an attacker to push new versions of a different user's package without having to steal their credentials. <a href="https://thehackernews.com/2026/10/github-tightens-npm-publishing-after.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Unplug your smart fridges, French supermarkets warned after cyberattack</strong><p>More internet-connected refrigerators have joined the official list of those affected by a cyberattack that ruined stocks of chilled food at hundreds of French supermarkets over the weekend. <a href="https://www.csoonline.com/article/4235107/unplug-your-smart-fridges-french-supermarkets-warned-after-cyberattack.html" rel="noopener noreferrer" target="_blank">Source: CSO Online</a></p></li></ul>
+    </section>
+
+    <footer>
+      Generated 2026-10-14T12:56:36 UTC
+      <br><em>Sources that failed this run: US-CERT CISA Alerts</em>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("cybersec-briefing-theme", next);
+    }
+    (function() {
+      const saved = localStorage.getItem("cybersec-briefing-theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</body>
+</html>
