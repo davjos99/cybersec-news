@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersec Briefing — 2026-11-03</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c0e;
+      --bg-card: #15151a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a8a8b0;
+      --accent-cyan: #5adcf0;
+      --accent-yellow: #ffd54f;
+      --accent-green: #82e682;
+      --accent-red: #ff7a7a;
+      --border: #2a2a32;
+    }
+    [data-theme="light"] {
+      --bg-dark: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --accent-cyan: #0091ad;
+      --accent-yellow: #b8860b;
+      --accent-green: #228822;
+      --accent-red: #c0392b;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .toggle {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .toggle:hover { border-color: var(--accent-cyan); }
+    section {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    section.threats { border-left-color: var(--accent-red); }
+    section.news { border-left-color: var(--accent-cyan); }
+    section.advice { border-left-color: var(--accent-green); }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.threats h2 { color: var(--accent-red); }
+    section.news h2 { color: var(--accent-cyan); }
+    section.advice h2 { color: var(--accent-green); }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    li:last-child { border-bottom: none; }
+    li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    li a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    li a:hover { text-decoration: underline; }
+    li p { color: var(--text-secondary); font-size: 0.95rem; }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .no-items {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Cybersec Briefing — 2026-11-03</h1>
+        <div class="meta">Window: last 24 hours &middot; 10 sources polled &middot; 11 items kept</div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()">Light / Dark</button>
+    </header>
+
+    <section class="threats">
+      <h2>Threats</h2>
+      <ul><li><strong>AIs Hacking the Law</strong><p>In both a 2021 essay and my 2022 book, A Hacker’s Mind, I talk about AIs finding vulnerabilities and exploits—hacking—the legal system. Here’s some demonstrations of this from Germany: Legal systems encode the foundations of social order in natural language. <a href="https://www.schneier.com/blog/archives/2026/11/ais-hacking-the-law.html" rel="noopener noreferrer" target="_blank">Source: Schneier on Security</a></p></li><li><strong>UK school estate hit by 3AM ransomware in suspected AI-assisted attack</strong><p>A 3AM ransomware affiliate targeted a school estate in the UK and successfully encrypted around 37 of nearly 50 machines reached from an unmanaged host. [...] <a href="https://www.bleepingcomputer.com/news/security/uk-school-estate-hit-by-3am-ransomware-in-suspected-ai-assisted-attack/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Red Hat Patches 9.8-Rated Linux TCP RCE Flaw While Ubuntu Releases Fixes for Testing</strong><p>Fixed kernels for a use-after-free vulnerability in the Linux kernel's IPv4 TCP code are now available for Red Hat Enterprise Linux 8, 9, and 10, while Ubuntu's fixes for its three newest long-term-support releases remain in its opt-in testing channel with no date for a regular u. <a href="https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>The 4 Elements of Exposure Prioritization and How to Operationalize Them</strong><p>Your team is remediating more vulnerabilities than ever, yet your breach risk has barely changed. You’re spending too much time and effort on exposures attackers may never exploit, while higher-risk exposures sit, waiting in the queue. <a href="https://thehackernews.com/2026/11/the-4-elements-of-exposure.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Harvard University data breach exposed info of 851,000 accounts</strong><p>Hackers who breached Harvard University's Alumni Affairs and Development systems in November 2025 stole data linked to more than 850,000 unique email addresses, according to breach notification service Have I Been Pwned. [...] <a href="https://www.bleepingcomputer.com/news/security/harvard-university-data-breach-exposed-info-of-851-000-accounts/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li></ul>
+    </section>
+
+    <section class="news">
+      <h2>News</h2>
+      <ul><li><strong>Tech Firms Dismantle Botnet That Turned 1.3M TV Boxes Into Proxies</strong><p>Google said today it worked with industry partners to dismantle a botnet made up of more than 1.3 million Android TV set-top boxes that ship with malicious software which secretly rents the user’s Internet connection out to strangers and conducts advertising fraud. <a href="https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies/" rel="noopener noreferrer" target="_blank">Source: KrebsOnSecurity</a></p></li><li><strong>Barracuda warns of critical flaws allowing root access to devices</strong><p>Cybersecurity company Barracuda Networks warned customers to patch two vulnerabilities that can let attackers run commands with root privileges. [...] <a href="https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Police seizes over 100 servers in investment scam crackdown</strong><p>European law enforcement authorities arrested seven suspects and seized more than 100 servers in a joint action targeting an unnamed company suspected of providing fraudulent trading websites to criminal gangs. [...] <a href="https://www.bleepingcomputer.com/news/security/police-seizes-over-100-servers-in-investment-scam-crackdown/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Google adds new $250,000 Cloud VRP reward for Root-in-Cloud bugs</strong><p>Google has expanded its Cloud Vulnerability Reward Program (VRP) with a new top-tier reward for high-impact architectural security flaws. [...] <a href="https://www.bleepingcomputer.com/news/google/google-adds-new-250-000-cloud-vrp-reward-for-root-in-cloud-bugs/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Russia-Aligned Gorbag Hackers Exploit WinRAR Flaw to Deploy Data-Stealing Malware</strong><p>A Russia-aligned threat actor known as Gorbag has been observed using simple information stealer malware in attacks targeting Ukrainian organizations. <a href="https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="advice">
+      <h2>Advice</h2>
+      <ul><li><strong>Gartner Predicts SOCs Will Have 50% More Engineers Than Analysts by 2028</strong><p>Gartner predicts that security operations centers will have 50% more engineers than analysts by 2028 as AI agents take over routine alert handling. <a href="https://www.bleepingcomputer.com/news/security/gartner-predicts-socs-will-have-50-percent-more-engineers-than-analysts-by-2028/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li></ul>
+    </section>
+
+    <footer>
+      Generated 2026-11-03T15:21:18 UTC
+      
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("cybersec-briefing-theme", next);
+    }
+    (function() {
+      const saved = localStorage.getItem("cybersec-briefing-theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</body>
+</html>
