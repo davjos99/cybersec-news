@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersec Briefing — 2026-11-12</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c0e;
+      --bg-card: #15151a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a8a8b0;
+      --accent-cyan: #5adcf0;
+      --accent-yellow: #ffd54f;
+      --accent-green: #82e682;
+      --accent-red: #ff7a7a;
+      --border: #2a2a32;
+    }
+    [data-theme="light"] {
+      --bg-dark: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --accent-cyan: #0091ad;
+      --accent-yellow: #b8860b;
+      --accent-green: #228822;
+      --accent-red: #c0392b;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .toggle {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .toggle:hover { border-color: var(--accent-cyan); }
+    section {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    section.threats { border-left-color: var(--accent-red); }
+    section.news { border-left-color: var(--accent-cyan); }
+    section.advice { border-left-color: var(--accent-green); }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.threats h2 { color: var(--accent-red); }
+    section.news h2 { color: var(--accent-cyan); }
+    section.advice h2 { color: var(--accent-green); }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    li:last-child { border-bottom: none; }
+    li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    li a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    li a:hover { text-decoration: underline; }
+    li p { color: var(--text-secondary); font-size: 0.95rem; }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .no-items {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Cybersec Briefing — 2026-11-12</h1>
+        <div class="meta">Window: last 24 hours &middot; 10 sources polled &middot; 11 items kept</div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()">Light / Dark</button>
+    </header>
+
+    <section class="threats">
+      <h2>Threats</h2>
+      <ul><li><strong>Exploit Attempts for GPUStack Authentication Bypass (CVE-2026-102895), (Thu, Nov 12th)</strong><p>CVE-2026-102895 is a trivial authentication-bypass vulnerability. GPUStack is also an attractive target. It is open-source software that manages clusters of GPUs, which are typically used to run AI workloads. All versions of GPUStack prior to 2.2. <a href="https://isc.sans.edu/diary/rss/33514" rel="noopener noreferrer" target="_blank">Source: SANS Internet Storm Center</a></p></li><li><strong>Who Runs the Ransomware Group Qilin?</strong><p>The cybercrime group Qilin has emerged as the world’s most active ransomware affiliate program, claiming at least 365 victim organizations in the past three months alone. <a href="https://krebsonsecurity.com/2026/11/who-runs-the-ransomware-group-qilin/" rel="noopener noreferrer" target="_blank">Source: KrebsOnSecurity</a></p></li><li><strong>Apify rotates API tokens, prompts 2FA resets after breach</strong><p>Apify has rotated internal secrets and revoked some third-party OAuth connections after detecting unauthorized access to its internal systems. [...] <a href="https://www.bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access</strong><p>N-able on Thursday said it's investigating a new public disclosure containing claims of additional vulnerabilities in on-premise versions of N-central running version 2026.4.1 HF2. <a href="https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution</strong><p>PTC has released patches for a new vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution. The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0. <a href="https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <section class="news">
+      <h2>News</h2>
+      <ul><li><strong>Another Way Police Are Locating People from Their Smartphones</strong><p>Penlink’s Webloc is an application that locates people using information from the weather, gaming, email, and religious apps on their phone. It’s sold to the police. <a href="https://www.schneier.com/blog/archives/2026/11/another-way-police-are-locating-people-from-their-smartphones.html" rel="noopener noreferrer" target="_blank">Source: Schneier on Security</a></p></li><li><strong>Microsoft Patch Tuesday November 2026, (Tue, Nov 10th)</strong><p>Microsoft continues its AI-induced patch surge, addressing 1,260 different vulnerabilities this month. 68 of these vulnerabilities are considered . 167 of the vulnerabilities are Chromium issues affecting Microsoft Edge. <a href="https://isc.sans.edu/diary/rss/33508" rel="noopener noreferrer" target="_blank">Source: SANS Internet Storm Center</a></p></li><li><strong>Police dismantle Gootloader, CastleRAT, StealC malware infrastructure</strong><p>Europol and law enforcement partners from nine countries have seized hundreds of servers and domains used by the Gootloader, CastleRAT, and StealC malware operations. [...] <a href="https://www.bleepingcomputer.com/news/security/police-dismantles-gootloader-castlerat-stealc-malware-infrastructure/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Your Endpoint Management Platform Could Be Your Biggest Security Risk</strong><p>Endpoint management platforms can become powerful attack tools when compromised, allowing hackers to deploy malware, execute commands, and disrupt thousands of devices. <a href="https://www.bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Microsoft: Recent Windows updates cause SQL Server performance issues</strong><p>Microsoft has confirmed that Windows updates released since the October 2026 Patch Tuesday are causing SQL Server performance and stability issues. [...] <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-recent-windows-updates-cause-sql-server-performance-issues/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li></ul>
+    </section>
+
+    <section class="advice">
+      <h2>Advice</h2>
+      <ul><li><strong>Webinar: See How Identity Blind Spots Put Your SOC at Risk and How to Close Them</strong><p>Security teams have more alerts, logs, and monitoring tools than ever. Yet when an attack happens, one simple question can still take too long to answer: Who or what is behind this activity, and what can they access? A suspicious login might belong to an employee. <a href="https://thehackernews.com/2026/11/your-soc-sees-alert-but-does-it-know.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li></ul>
+    </section>
+
+    <footer>
+      Generated 2026-11-12T16:03:38 UTC
+      
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("cybersec-briefing-theme", next);
+    }
+    (function() {
+      const saved = localStorage.getItem("cybersec-briefing-theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</body>
+</html>
