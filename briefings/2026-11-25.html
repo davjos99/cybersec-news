@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersec Briefing — 2026-11-25</title>
+  <style>
+    :root {
+      --bg-dark: #0c0c0e;
+      --bg-card: #15151a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a8a8b0;
+      --accent-cyan: #5adcf0;
+      --accent-yellow: #ffd54f;
+      --accent-green: #82e682;
+      --accent-red: #ff7a7a;
+      --border: #2a2a32;
+    }
+    [data-theme="light"] {
+      --bg-dark: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --accent-cyan: #0091ad;
+      --accent-yellow: #b8860b;
+      --accent-green: #228822;
+      --accent-red: #c0392b;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 880px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .toggle {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .toggle:hover { border-color: var(--accent-cyan); }
+    section {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    section.threats { border-left-color: var(--accent-red); }
+    section.news { border-left-color: var(--accent-cyan); }
+    section.advice { border-left-color: var(--accent-green); }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.threats h2 { color: var(--accent-red); }
+    section.news h2 { color: var(--accent-cyan); }
+    section.advice h2 { color: var(--accent-green); }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    li:last-child { border-bottom: none; }
+    li strong {
+      color: var(--text-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    li a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    li a:hover { text-decoration: underline; }
+    li p { color: var(--text-secondary); font-size: 0.95rem; }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .no-items {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.5rem; }
+      h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Cybersec Briefing — 2026-11-25</h1>
+        <div class="meta">Window: last 24 hours &middot; 10 sources polled &middot; 12 items kept</div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()">Light / Dark</button>
+    </header>
+
+    <section class="threats">
+      <h2>Threats</h2>
+      <ul><li><strong>CISA warns of critical unpatched flaw in Danfoss refrigeration controllers</strong><p>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning about a vulnerability in Danfoss AK-SM 8xxA Series controllers used by food retailers to manage commercial refrigeration, HVAC, and lighting systems. [...] <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>InfraTrust warns of exploited supply chain flaws in network appliances</strong><p>Eclypsium's November InfraTrust report warns that most infrastructure security advisories addressing exploited vulnerabilities over the past month involve flaws in third-party software bundled into products rather than code developed by the vendors themselves. [...] <a href="https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains</strong><p>Threat actors are actively exploiting two newly patched security flaws in GeoServer, according to watchTowr. The vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details of which are below - CVE-2026-120705 (CVSS score: 8. <a href="https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation</strong><p>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a flaw impacting Drupal to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by November 27, 2026. <a href="https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Hackers now exploit critical Drupal RCE flaw to hijack sites</strong><p>The Drupal security team has confirmed that a vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday. [...] <a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li></ul>
+    </section>
+
+    <section class="news">
+      <h2>News</h2>
+      <ul><li><strong>Tracking Incidents of Hacking Using AI Tools</strong><p>Daniel Meissler is tracking incidents of AI-enhanced hacking, and the offensive harnesses the hackers are using. <a href="https://www.schneier.com/blog/archives/2026/11/tracking-incidents-of-hacking-using-ai-tools.html" rel="noopener noreferrer" target="_blank">Source: Schneier on Security</a></p></li><li><strong>More Pentests Without More Pentesters: Where AI Safely Helps</strong><p>Penetration testers spend a significant portion of their engagements on documentation, reporting, and other tasks outside of testing. <a href="https://www.bleepingcomputer.com/news/security/more-pentests-without-more-pentesters-where-ai-safely-helps/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li><li><strong>U.S. Treasury's Financial Crimes Agency Takes Some Systems Offline After Cyber Intrusion</strong><p>The U.S. Treasury Department's Financial Crimes Enforcement Network (FinCEN) has been hit by a cybersecurity incident that resulted in &quot;unauthorized access to a limited subset of its systems,&quot; the bureau said on Tuesday. As a precaution, it has taken some systems offline. <a href="https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Credential Remediation Is Slow When You Don’t Know What Will Break</strong><p>TL;DR More than 64% still valid after four years: GitGuardian’s State of Secrets Sprawl 2026 found that most valid secrets discovered in 2022 still worked in January 2026, because teams stall on what a revoke will break. <a href="https://thehackernews.com/2026/11/credential-remediation-is-slow-when-you.html" rel="noopener noreferrer" target="_blank">Source: The Hacker News</a></p></li><li><strong>Microsoft fixes Microsoft 365 bug blocking access to Office apps</strong><p>Earlier this week, Microsoft resolved a known issue that was preventing some Microsoft 365 customers from accessing Office applications. [...] <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-blank-dialog-that-made-microsoft-365-office-apps-unusable/" rel="noopener noreferrer" target="_blank">Source: Bleeping Computer</a></p></li></ul>
+    </section>
+
+    <section class="advice">
+      <h2>Advice</h2>
+      <ul><li><strong>It's a Bot World. We're Just Living in It</strong><p>Bot detection has become a losing game. Security teams need to limit privileged access for humans and their machine counterparts equally. <a href="https://www.darkreading.com/cyber-risk/bot-world-just-living" rel="noopener noreferrer" target="_blank">Source: Dark Reading</a></p></li><li><strong>Despite doom and gloom headlines, AI attacks are thin on the ground</strong><p>When Anthropic announced its Mythos AI model, it was touted as being so cyber capable that only a handful of organizations could have early access to harden their defenses before the public — and attackers — got their hands on the technology. <a href="https://www.csoonline.com/article/4250533/despite-doom-and-gloom-headlines-ai-attacks-are-thin-on-the-ground.html" rel="noopener noreferrer" target="_blank">Source: CSO Online</a></p></li></ul>
+    </section>
+
+    <footer>
+      Generated 2026-11-25T18:03:08 UTC
+      
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("cybersec-briefing-theme", next);
+    }
+    (function() {
+      const saved = localStorage.getItem("cybersec-briefing-theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</body>
+</html>
